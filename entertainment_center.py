@@ -34,11 +34,10 @@ if res.status == 200:
         video_list = loaded_data2["results"]
         trailer = None
 
-        # iterate through list of video links to find movie trailer        
+        # iterate through list of video links to find movie trailer
         for video in video_list:
             if video["type"] == "Trailer":
-                trailer = "https://www.youtube.com/watch?"
-                "v={0}".format(video["key"])
+                trailer = "https://www.youtube.com/watch?v=" + video["key"]
                 break
         # create Movie if trailer is found and save into movies list
         if trailer is not None:
